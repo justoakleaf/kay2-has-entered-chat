@@ -1,0 +1,106 @@
+.k2-enters-chat {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    font-family: monospace;
+    background: #222;
+    color: lime;
+}
+
+.app-container {
+    display: none;
+    flex-direction: column;
+    padding: 0.5em;
+}
+
+.cursor {
+    -webkit-animation: blink 0.8s infinite;
+    animation: blink 0.8s infinite;
+}
+
+@-webkit-keyframes blink {
+    0% {color: #222}
+    50% {color: lime}
+    100% {color: #222}
+}
+
+@keyframes blink {
+    0% {color: #222}
+    50% {color: lime}
+    100% {color: #222}
+}
+
+.app-container#droidchat {
+    height: 100%;
+}
+
+.chatbox-container {
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+}
+
+.chatbox {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.k2-console-container {
+    overflow: auto;
+}
+
+.k2-console {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.message-row {
+    display: flex;
+}
+
+.message-container {
+    display: none;
+    flex-direction: row;
+    /* padding-top: 10px; */
+}
+
+.username {
+    font-weight: bold;
+}
+
+.MODBOT {
+    color: red;
+}
+
+.TPOh {
+    color: yellow;
+}
+
+.Are2 {
+    color: skyblue;
+}
+
+.Chopper {
+    color: lightgrey;
+}
+
+.ExM {
+    color: lightgreen;
+}
+
+.Kay2 {
+    color: pink;
+}
+
+ul.nopoint li::before {
+    content: "\200B";
+}
+
+ul.creditlist {
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    padding-inline-start: 1.1em;
+}
