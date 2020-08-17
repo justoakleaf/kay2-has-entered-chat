@@ -13,7 +13,7 @@ Otherwise, look for the green "code" or "download" button. Select the "Download 
 
 ## I want to read the source code.
 
-You can clone the project and then view the files inside `web-src`. 
+You can clone the project and then view the files inside `web-src`. There are no external dependencies.
 
 Files in the `helper-scripts` directory are helpers to assist in creating the html file. They are stored here for the developer's benefit.
 
