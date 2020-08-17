@@ -185,6 +185,11 @@ ELEMENTS.audioPlayer.addEventListener("play", () => {
     unhideMessage(ELEMENTS.audioPlayer.currentTime)
 })
 
+ELEMENTS.audioPlayer.addEventListener("ended", () => {
+    ELEMENTS.appContainer.style.display = 'none';
+    ELEMENTS.credits.style.display = 'flex';
+})
+
 ELEMENTS.audioPlayer.addEventListener("pause", () => {
     // clear timers
     TIMERS.forEach((timer) => {
