@@ -1,5 +1,4 @@
 SCRIPT_PATH = r'script.txt'
-TMP_FILE_PATH = r'tmp.txt'
 TIMINGS_PATH = r'timings.txt'
 HTML_LINES_PATH = r'htmllines.txt'
 
@@ -8,17 +7,11 @@ import html
 with open(SCRIPT_PATH, 'rb') as fh:
     tmplines = fh.read()
 
-tmplines = tmplines.decode('utf-8').replace('’', "'").replace('“', '"').replace("”", '"').encode('utf-8')
-
-with open(TMP_FILE_PATH, 'wb+') as fh:
-    fh.write(tmplines)
-
-with open(TMP_FILE_PATH) as fh:
-    scriptlines = fh.readlines()
-
 with open(TIMINGS_PATH) as fh:
     timinglines = fh.readlines()
 
+tmplines = tmplines.decode('utf-8').replace('’', "'").replace('“', '"').replace("”", '"')
+scriptlines = tmplines.splitlines()
 
 htmllines = []
 
