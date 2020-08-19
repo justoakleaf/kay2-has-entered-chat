@@ -15,6 +15,8 @@ scriptlines = tmplines.splitlines()
 
 htmllines = []
 
+override_typing = [161, 195, 199]
+
 for i, line in enumerate(scriptlines):
     cleanline = line.strip()
 
@@ -28,17 +30,14 @@ for i, line in enumerate(scriptlines):
         # K2 command
         typeStart = 3
         lineType = 'K2cmd'
-        if len(cleanline) < 3 or not cleanline[2] == ' ':
-            cleanline = '>> '+cleanline[2:]
-
         prompt = '>>'
     elif cleanline.startswith('.'):
-        typeStart = 2
+        typeStart = 3
         lineType = 'K2cmd'
         prompt = '..'
     elif cleanline.startswith(':'):
         lineType = 'DCctrl'
-        prompt = "Kay2 >"
+        prompt = "Kay2>"
     else:
         # message line
         lineType = 'msg'
@@ -49,11 +48,12 @@ for i, line in enumerate(scriptlines):
             spanclass=msg[0]
         user = f'<div><span class="username {spanclass}">{msg[0]}</span></div>'
         cleanline = msg[1].strip()
-        prompt = "Kay2 >"
+        prompt = "Kay2>"
 
+    if i in override_typing:
+        typeStart = len(cleanline)
 
-
-    linedata = html.escape(cleanline).replace('  ', '&nbsp;')
+    linedata = html.escape(cleanline).replace('  ', '&nbsp;&nbsp;')
 
     divAttrs = f'id="msg{i}" class="message-container" data-class="{lineType}" data-timing="{timinglines[i].strip()}" data-type-start="{typeStart}" data-prompt="{prompt}"'
 
