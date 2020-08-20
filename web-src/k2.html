@@ -12,8 +12,61 @@
     </head>
     
     <body>
-
         <div style="display: flex;flex-direction: column;height: 100%;">
+            <div>
+                <h2>
+                    Kay2 has Entered Chat
+                </h2>
+            </div>
+            <div id="meta-info">
+                <button class="accordion">Info and Credits</button>
+                <div class="panel">
+                    <p>This animation is based on a fanfic/podfic of the same name. You can find the original text <a href="https://archiveofourown.org/works/26006056">on Ao3</a>.</p>
+                    
+                    <p><b>Credits</b></p>
+                    <p>Written by Litra</p>
+                    <p>Voice cast:
+                        <ul>
+                            <li>3POh and Kay2: GodOfLaundryBaskets</li>
+                            <li>Chopper and ExM: oakleaf</li>
+                            <li>Are2: Litra</li>
+                        </ul>
+                    </p>
+                    <p>Animation by oakleaf (<a href="https://github.com/justoakleaf/kay2-has-entered-chat">source code available on Github</a>)</p>
+                    <p></p>
+                    <p><b>Music</b></p>
+                    <p>
+                        Hiding Your Reality by Kevin MacLeod<br>
+                        Link: https://incompetech.filmmusic.io/song/3875-hiding-your-reality<br>
+                        License: http://creativecommons.org/licenses/by/4.0/<br>
+                        <br>
+                        Ouroboros by Kevin MacLeod<br>
+                        Link: https://incompetech.filmmusic.io/song/4996-ouroboros<br>
+                        License: http://creativecommons.org/licenses/by/4.0/<br>
+                    </p>
+                </div>
+
+                <button class="accordion">How to use this animation</button>
+                <div class="panel">
+                    <p>
+                        This animation is (largely) synced up to the audio. It is started when the play button is pressed on the audio.
+                    </p>
+                    <p>
+                        Please enable JavaScript to view the animation.
+                    </p>
+                    <p>
+                        For the best experience, Close any of the info panels you have expanded to maximise the animation area.
+                    </p>
+                    <p>
+                        If you jump around in or pause the audio, the animation will automatically move to the right place. 
+                        Due to the nature of the timing, you may notice a slight misalignment between the text and the audio.
+                    </p>
+                    <p>
+                        The animation does not automatically realign if you seek in the audio with the arrow keys or if the audio time is updated in the console. 
+                        To realign the animation, pausing and unpausing should fix this.
+                    </p>
+                </div>
+            </div>
             <div id="controls">
                 <audio controls id="audio">
                     <source src="https://archive.org/download/kay2-has-entered-chat-rogue-one-podfic/k2EntersTheChat.mp3" type="audio/mp3">
@@ -24,46 +77,10 @@
             <!-- div containing the entire app -->
             <div id="k2-enters-chat" class="k2-enters-chat" style="flex-grow: 1;">
                 <div class="app-container" id="credits" style="display: flex;height: 100%;justify-content: center;">
-                    <div>
-                        <span style="font-size: 1.75em;">Kay2 has Entered Chat</span>
-                    </div>
-                    <div style="padding-top: 1em;">
-                        Written by Litra<br>
-                    </div>
-                    <div style="padding-top: 1em;">
-                        Voice cast:
-                        <ul class="creditlist nopoint" style="list-style-type: none;">
-                            <li><span class="TPOh">3POh</span> and <span class="Kay2">Kay2</span>: GodOfLaundryBaskets</li>
-                            <li><span class="Chopper">Chopper</span> and <span class="ExM">ExM</span>: oakleaf</li>
-                            <li><span class="Are2">Are2</span>: Litra</li>
-                        </ul>
-                    </div>
-                    <div style="padding-top: 1em;">
-                        Animation coded by oakleaf
-                    </div>
-                    <div style="padding-top: 1em;">
-                        Music:
-                        <ul class="creditlist nopoint" style="list-style-type: none;">
-                            <li>
-                                Hiding Your Reality by Kevin MacLeod<br>
-                                Link: https://incompetech.filmmusic.io/song/3875-hiding-your-reality<br>
-                                License: http://creativecommons.org/licenses/by/4.0/<br>
-                            </li>
-                            <li><i>and</i></li>
-                            <li>
-                                Ouroboros by Kevin MacLeod<br>
-                                Link: https://incompetech.filmmusic.io/song/4996-ouroboros<br>
-                                License: http://creativecommons.org/licenses/by/4.0/<br>
-                            </li>
-                        </ul>
-                    </div>
-                    <div style="padding-top: 2em;">
-                        <ul class="creditlist" style="font-style: italic;list-style-type: '> ';">
-                            <li>This animation is designed to run alongside the audio</li>
-                            <li>Pausing and jumping around will pause/jump the animation</li>
-                            <li>Press play on the audio track to start</li>
-                        </ul>
-                    </div>
+                    [INFO] Click play to start the animation.<br>
+                    &gt;&gt;<br>
+                    <div>&gt;&gt;<span class="cursor">&block;</span></div>
+                    
                     
                 </div>
                 <div class="app-container" id="droidchat">

@@ -1,6 +1,7 @@
 html, 
 body {
     height: 99%;
+    font-family: sans-serif;
 }
 
 .k2-enters-chat {
@@ -109,3 +110,41 @@ ul.creditlist {
     margin-block-start: 0px;
     padding-inline-start: 1.1em;
 }
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 1em;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: inherit;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 0.5em;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    font-size: inherit;
+    padding: 0 1em;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }

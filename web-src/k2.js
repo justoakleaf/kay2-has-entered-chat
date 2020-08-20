@@ -178,6 +178,23 @@ function unhideMessage(currentTime) {
 
 }
 
+function makeAccordians() {
+    let acc = document.getElementsByClassName("accordion");
+    let i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+}
+
 ELEMENTS.appContainer.style.display = 'none';
 ELEMENTS.audioPlayer.addEventListener("play", () => {
     ELEMENTS.credits.style.display = 'none';
@@ -201,3 +218,4 @@ ELEMENTS.audioPlayer.addEventListener("pause", () => {
 })
 
 makeTimings()
+makeAccordians()
