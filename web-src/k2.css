@@ -1,5 +1,7 @@
 html, 
 body {
+    display: flex;
+    flex-direction: column;
     height: 99%;
     font-family: sans-serif;
 }
@@ -7,37 +9,28 @@ body {
 .k2-enters-chat {
     display: flex;
     flex-direction: column;
-    height: 90%;
+    height: 100%;
+    min-height: 40em;
+    padding: 0.5em;
     font-family: monospace;
     background: #222;
     color: lime;
+    flex-grow: 1
 }
 
 .app-container {
-    display: none;
+    display: flex;
     flex-direction: column;
+    height: 100%;
     padding: 0.5em;
 }
 
-.cursor {
-    -webkit-animation: blink 0.8s infinite;
-    animation: blink 0.8s infinite;
-}
-
-@-webkit-keyframes blink {
-    0% {color: #222}
-    50% {color: lime}
-    100% {color: #222}
-}
-
-@keyframes blink {
-    0% {color: #222}
-    50% {color: lime}
-    100% {color: #222}
+.app-container#credits {
+    justify-content: center;
 }
 
 .app-container#droidchat {
-    height: 100%;
+    display: none;
 }
 
 .chatbox-container {
@@ -47,32 +40,18 @@ body {
 }
 
 .chatbox {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     bottom: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.k2-console-container {
-    overflow: auto;
-}
-
-.k2-console {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.message-row {
-    display: flex;
 }
 
 .message-container {
     display: none;
     flex-direction: row;
-    /* padding-top: 10px; */
 }
 
+/* Characters */
 .username {
     font-weight: bold;
 }
@@ -101,20 +80,28 @@ body {
     color: pink;
 }
 
-ul.nopoint li::before {
-    content: "\200B";
+/* Blinking cursor */
+.cursor {
+    -webkit-animation: blink 0.8s infinite;
+    animation: blink 0.8s infinite;
 }
 
-ul.creditlist {
-    margin-block-end: 0px;
-    margin-block-start: 0px;
-    padding-inline-start: 1.1em;
+@-webkit-keyframes blink {
+    0% {color: #222}
+    50% {color: lime}
+    100% {color: #222}
 }
 
+@keyframes blink {
+    0% {color: #222}
+    50% {color: lime}
+    100% {color: #222}
+}
+
+/* Accordian menu */
 .accordion {
     background-color: #eee;
     color: #444;
-    cursor: pointer;
     padding: 1em;
     width: 100%;
     border: none;
@@ -122,29 +109,29 @@ ul.creditlist {
     outline: none;
     font-size: inherit;
     transition: 0.4s;
-  }
-  
-  .active, .accordion:hover {
+}
+
+.active, .accordion:hover {
     background-color: #ccc;
-  }
-  
-  .accordion:after {
+}
+
+.accordion:after {
     content: '\002B';
     color: #777;
     font-weight: bold;
     float: right;
     margin-left: 0.5em;
-  }
-  
-  .active:after {
+}
+
+.active:after {
     content: "\2212";
-  }
-  
-  .panel {
+}
+
+.panel {
     font-size: inherit;
     padding: 0 1em 1em 1em;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-  }
+}
