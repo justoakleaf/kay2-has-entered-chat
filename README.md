@@ -1,4 +1,4 @@
-# Kay2 has entered chat
+# Kay2 has Entered Chat
 
 This repository holds the code that runs the animation for the Rouge One fic of the same name.
 
