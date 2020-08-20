@@ -142,7 +142,7 @@ ul.creditlist {
   
   .panel {
     font-size: inherit;
-    padding: 0 1em;
+    padding: 0 1em 1em 1em;
     background-color: white;
     max-height: 0;
     overflow: hidden;
