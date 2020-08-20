@@ -6,6 +6,17 @@ body {
     font-family: sans-serif;
 }
 
+#top-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body.darkmode {
+    background: #222;
+    color: lightgrey;
+}
+
 .k2-enters-chat {
     display: flex;
     flex-direction: column;
@@ -13,9 +24,14 @@ body {
     min-height: 40em;
     padding: 0.5em;
     font-family: monospace;
+    flex-grow: 1;
+    border: solid lightgrey;
+}
+
+.darkmode
+.k2-enters-chat {
     background: #222;
     color: lime;
-    flex-grow: 1
 }
 
 .app-container {
@@ -60,24 +76,49 @@ body {
     color: red;
 }
 
+.darkmode
 .TPOh {
     color: yellow;
 }
 
+.TPOh {
+    color: orange;
+}
+
+.darkmode
 .Are2 {
     color: skyblue;
 }
 
+.Are2 {
+    color: blue;
+}
+
+.darkmode
 .Chopper {
     color: lightgrey;
+}
+
+.Chopper {
+    color: grey;
+}
+
+.darkmode
+.ExM {
+    color: lightgreen;
 }
 
 .ExM {
     color: lightgreen;
 }
 
+.darkmode
 .Kay2 {
     color: pink;
+}
+
+.Kay2 {
+    color: magenta;
 }
 
 /* Blinking cursor */
@@ -87,15 +128,15 @@ body {
 }
 
 @-webkit-keyframes blink {
-    0% {color: #222}
-    50% {color: lime}
-    100% {color: #222}
+    0% {opacity: 0;}
+    50% {opacity: 100;}
+    100% {opacity: 0;}
 }
 
 @keyframes blink {
-    0% {color: #222}
-    50% {color: lime}
-    100% {color: #222}
+    0% {opacity: 0;}
+    50% {opacity: 100;}
+    100% {opacity: 0;}
 }
 
 /* Accordian menu */
@@ -111,27 +152,56 @@ body {
     transition: 0.4s;
 }
 
+.darkmode
+.accordion {
+    background-color: rgb(53, 53, 53);
+    color: lightgrey;
+}
+
 .active, .accordion:hover {
     background-color: #ccc;
 }
 
-.accordion:after {
+.darkmode
+.active, .accordion:hover {
+    background-color: rgb(122, 122, 122);
+}
+
+.accordion:before {
     content: '\002B';
     color: #777;
     font-weight: bold;
-    float: right;
-    margin-left: 0.5em;
+    float: left;
+    margin-right: 0.5em;
 }
 
-.active:after {
+.darkmode
+.accordion:before {
+    color: lightgrey;
+}
+
+.active:before {
     content: "\2212";
 }
 
 .panel {
     font-size: inherit;
     padding: 0 1em 1em 1em;
-    background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+/* Dark mode toggle */
+#lightdark-btn {
+    background-color: #eee;
+    color: #444;
+    padding: 1em;
+    border: none;
+}
+
+.darkmode
+#lightdark-btn {
+    background-color: rgb(53, 53, 53);
+    color: lightgrey;
 }

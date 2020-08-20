@@ -11,13 +11,16 @@
         <link rel="stylesheet" href="./k2.css">      
     </head>
     
-    <body>
-        <div style="display: flex;flex-direction: column;height: 100%;">
-            <div>
-                <h1>
-                    Kay2 has Entered Chat
-                </h1>
+    <body class="darkmode">
+        <div id="top-container">
+            <div style="display: flex;">
+                <div><h1>Kay2 has Entered Chat</h1></div>
+                <div style="flex-grow: 1;"></div>
+                <div>
+                    <button id="lightdark-btn">Switch to <span id="dark-light-current">Light</span> Mode</button>
+                </div>
             </div>
+            
             <div id="meta-info">
                 <button class="accordion">Info, Credits, and How to Use</button>
                 <div class="panel">

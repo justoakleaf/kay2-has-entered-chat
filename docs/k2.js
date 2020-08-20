@@ -217,5 +217,14 @@ ELEMENTS.audioPlayer.addEventListener("pause", () => {
     ELEMENTS.typeSpace.innerText = '';
 })
 
+document.getElementById("lightdark-btn").addEventListener("click", () => {
+    document.body.classList.toggle("darkmode")
+    if (document.body.classList.contains("darkmode")) {
+        document.getElementById("dark-light-current").innerText = "Light"
+    } else {
+        document.getElementById("dark-light-current").innerText = "Dark"
+    }
+})
+
 makeTimings()
 makeAccordians()
