@@ -35,10 +35,10 @@ function timeoutModifyMessage(timing, currentTime) {
     const time = timing.timing - currentTime;
     const display = timing.display;
     setTimeoutWrapper(() => {
-        element.style.display = display;
+        element.classList.add("visible");
         ELEMENTS.prompt.innerText = promptText;
     }, () => {
-        element.style.display = 'none';
+        element.classList.remove("visible");
     }, time)
 }
 
@@ -77,7 +77,7 @@ function countVisibleTypers () {
     let visCount = 0;
 
     for (let i = 0; i < typerDivs.length; i++) {
-        if (typerDivs[i].style.display === 'inline') {
+        if (typerDivs[i].classList.contains("visible")) {
             visCount += 1
         }
     }
@@ -95,19 +95,19 @@ function whoTypes (timing, currentTime) {
     const { timeOut, startTime } = getTextTiming(timing, currentTime)
 
     setTimeoutWrapper(() => {
-        ELEMENTS.typing.style.display = "block";
-        typerDiv.style.display = "inline"; 
+        ELEMENTS.typing.classList.add("visible");
+        typerDiv.classList.add("visible"); 
     }, () => {
-        typerDiv.style.display = 'none';
+        typerDiv.classList.remove("visible"); 
         if (countVisibleTypers() === 0) {
-            ELEMENTS.typing.style.display = "none";
+            ELEMENTS.typing.classList.remove("visible");
         }
     }, timeOut)
 
     setTimeoutWrapper(() => {
-        typerDiv.style.display = "none";
+        typerDiv.classList.remove("visible"); 
         if (countVisibleTypers() === 0) {
-            ELEMENTS.typing.style.display = "none";
+            ELEMENTS.typing.classList.remove("visible");
         }
     }, () => {}, startTime)
 }
@@ -171,7 +171,6 @@ function makeTimings() {
 }
 
 function unhideMessage(currentTime) {
-    ELEMENTS.appContainer.style.display = 'flex';
     TIMINGS.forEach((timing) => {
         timing.callback(timing, currentTime)
     })
@@ -195,16 +194,24 @@ function makeAccordians() {
     }
 }
 
-ELEMENTS.appContainer.style.display = 'none';
+function showCredits(show) {
+    if (show) {
+        ELEMENTS.appContainer.classList.remove("visible");
+        ELEMENTS.credits.classList.add("visible");
+    } else {
+        ELEMENTS.appContainer.classList.add("visible");
+        ELEMENTS.credits.classList.remove("visible");
+    }
+}
+
+showCredits(true)
 ELEMENTS.audioPlayer.addEventListener("play", () => {
-    ELEMENTS.credits.style.display = 'none';
-    ELEMENTS.appContainer.style.display = 'flex';
+    showCredits(false)
     unhideMessage(ELEMENTS.audioPlayer.currentTime)
 })
 
 ELEMENTS.audioPlayer.addEventListener("ended", () => {
-    ELEMENTS.appContainer.style.display = 'none';
-    ELEMENTS.credits.style.display = 'flex';
+    showCredits(true)
 })
 
 ELEMENTS.audioPlayer.addEventListener("pause", () => {

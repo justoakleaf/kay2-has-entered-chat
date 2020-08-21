@@ -6,15 +6,20 @@ body {
     font-family: sans-serif;
 }
 
+body.darkmode {
+    background: #222;
+    color: lightgrey;
+}
+
+.darkmode
+a:link {
+    color: lightblue;
+}
+
 #top-container {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-body.darkmode {
-    background: #222;
-    color: lightgrey;
 }
 
 .k2-enters-chat {
@@ -35,7 +40,7 @@ body.darkmode {
 }
 
 .app-container {
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 100%;
     padding: 0.5em;
@@ -45,8 +50,8 @@ body.darkmode {
     justify-content: center;
 }
 
-.app-container#droidchat {
-    display: none;
+.app-container.visible {
+    display: flex;
 }
 
 .chatbox-container {
@@ -60,11 +65,16 @@ body.darkmode {
     flex-direction: column;
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
 
 .message-container {
     display: none;
     flex-direction: row;
+}
+
+.message-container.visible {
+    display: flex;
 }
 
 /* Characters */
@@ -119,6 +129,23 @@ body.darkmode {
 
 .Kay2 {
     color: magenta;
+}
+
+#typing {
+    display: none;
+    font-style: italic;
+}
+
+#typing.visible {
+    display: block;
+}
+
+.typer {
+    display: none;
+}
+
+.typer.visible {
+    display: inline;
 }
 
 /* Blinking cursor */
